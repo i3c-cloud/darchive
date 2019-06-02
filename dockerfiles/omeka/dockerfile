@@ -40,7 +40,7 @@ COPY ./res/config.ini /var/www/html/application/config/config.ini
 #VOLUME /var/www/html
 
 COPY ./run-omeka.sh /
-RUN cp -R /var/www/html/plugins /var/www/html/plugins.backup \
+RUN apt-get install -y wget && cp -R /var/www/html/plugins /var/www/html/plugins.backup \
 	&& cp /var/www/html/application/config/config.ini /var/www/html/application/config/config.backup \
 	&& chmod a+x /run-omeka.sh \
 	&& ln -sf /run-omeka.sh /r

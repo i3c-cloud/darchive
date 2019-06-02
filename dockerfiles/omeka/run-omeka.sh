@@ -1,6 +1,10 @@
 #!/bin/bash
 
 case "$1" in
+	plugin-install)
+	 cd /tmp && if [ -e omekaplugin ];then  rm -R omekaplugin; fi && mkdir omekaplugin && cd omekaplugin && wget $2
+	 unzip *.zip -d /var/www/html/plugins/
+	 ;;
 	startup)
 		actualsize=$(wc -c <"/var/www/html/application/config/config.ini")
 		if [ 10 -ge $actualsize ]; then
