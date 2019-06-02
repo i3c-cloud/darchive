@@ -1,6 +1,7 @@
 
 if [ ! -e $uData/config/config.ini ]; then
 	#cho "touchhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+	mkdir $uData/config
 	touch $uData/config/config.ini
 fi
 
